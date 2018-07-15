@@ -249,7 +249,7 @@
     <Content Include="images\Brian d%27Arcy James-Hamilton.jpg" />
     <Content Include="images\BrianCharlesJohnson.jpg" />
     <Content Include="images\BriandArcyJames.jpg" />
-    <Content Include="images\Bruce-Aguilar-Rohan-Cats.png" />
+    <Content Include="images\Bruce-Aguilar-Rohan-Cats.jpg" />
     <Content Include="images\BruceAguilarRohan.jpg" />
     <Content Include="images\BSPully.jpg" />
     <Content Include="images\Cameron Pow-LionKing.jpg" />
@@ -266,7 +266,7 @@
     <Content Include="images\Christopher Jackson-Hamilton.jpg" />
     <Content Include="images\ChristopherJackson.jpg" />
     <Content Include="images\Cody Jamison Strand-TBM.jpg" />
-    <Content Include="images\CodyJamisonStrand.png" />
+    <Content Include="images\CodyJamisonStrand.jpg" />
     <Content Include="images\Dashaun Young-LionKing.jpg" />
     <Content Include="images\DashaunYoung.jpg" />
     <Content Include="images\Dave Thomas Brown-TBM.jpg" />
@@ -296,12 +296,11 @@
     <Content Include="images\IsabelKeating.jpg" />
     <Content Include="images\Jackie Burns-wicked.jpg" />
     <Content Include="images\JackieBurns.jpg" />
-    <Content Include="images\Jasmine Cephas Jones-Hamilton.png" />
     <Content Include="images\JasmineCephasJones.jpg" />
     <Content Include="images\Jennifer Laura Thompson-DEH.jpg" />
     <Content Include="images\JenniferLauraThompson.jpg" />
     <Content Include="images\Joanna Ampil-Cats.jpg" />
-    <Content Include="images\JoannaAmpil.jpg.png" />
+    <Content Include="images\JoannaAmpil.jpg" />
     <Content Include="images\John Gallagher Jr.-SA.jpg" />
     <Content Include="images\JohnGallagherJr.jpg" />
     <Content Include="images\Jonathan B. Wright-SA.jpg" />

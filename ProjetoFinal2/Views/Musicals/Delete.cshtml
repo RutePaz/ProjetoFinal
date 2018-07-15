@@ -63,14 +63,15 @@
 
         <dt>
             @*@Html.DisplayNameFor(model => model.Poster)*@
-            <a href="~/images/@Model.Poster" target="_blank">
-                <img scr="~/images/@Model.Poster" width="50" height="37" />
 
-            </a>
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Poster)
+            @*@Html.DisplayFor(model => model.Poster)*@
+            <a href="~/images/@Model.Poster" target="_blank">
+                <img src="~/images/@Model.Poster" style=" height:290px; width:200px; object-fit:cover " />
+
+            </a>
         </dd>
 
     </dl>

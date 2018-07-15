@@ -18,6 +18,7 @@ namespace ProjetoFinal2.Controllers
         // GET: Users
         public ActionResult Index()
         {
+            
             return View(db.User.ToList());
         }
 

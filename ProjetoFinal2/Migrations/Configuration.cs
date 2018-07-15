@@ -136,8 +136,8 @@ namespace ProjetoFinal2.Migrations
   new Cast {ID_Actor=54, Name="Fletcher Dobinson",Image="FletcherDobinson.jpg"},
   new Cast {ID_Actor=55, Name="Ella Nonini",Image="EllaNonini.jpg"},
   new Cast {ID_Actor=56, Name="Joanna Ampil",Image="JoannaAmpil.jpg"},
-  new Cast {ID_Actor=57, Name="Elizabeth Futter",Image="JoannaAmpil.jpg"},
-  new Cast {ID_Actor=58, Name="Grace Swaby",Image="JoannaAmpil.jpg"},
+  new Cast {ID_Actor=57, Name="Elizabeth Futter",Image="ElizabethFutter.jpg"},
+  new Cast {ID_Actor=58, Name="Grace Swaby",Image="GraceSwaby.jpg"},
 
 
 

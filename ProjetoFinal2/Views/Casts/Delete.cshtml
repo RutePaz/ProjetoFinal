@@ -21,14 +21,14 @@
 
         <dt>
             @*@Html.DisplayNameFor(model => model.Image)*@
-            <a href="~/images/@Model.Image" target="_blank">
-                <img scr="~/images/@Model.Image" width="50" height="37" />
 
-            </a>
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image)
+            @*@Html.DisplayFor(model => model.Image)*@
+            <a href="~/images/@Model.Image" target="_blank">
+                <img src="~/images/@Model.Image" style=" height:160px; width:120px; object-fit:cover " />
+            </a>
         </dd>
 
     </dl>

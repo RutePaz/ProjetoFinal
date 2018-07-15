@@ -59,11 +59,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Poster)
+            @*@Html.DisplayNameFor(model => model.Poster)*@
+
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Poster)
+            @*@Html.DisplayFor(model => model.Poster)*@
+            <a href="~/images/@Model.Poster" target="_blank">
+                <img src="~/images/@Model.Poster" style=" height:290px; width:200px; object-fit:cover " />
+
+            </a>
         </dd>
 
     </dl>

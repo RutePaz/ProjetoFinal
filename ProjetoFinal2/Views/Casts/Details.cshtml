@@ -19,11 +19,14 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Image)
+            @*@Html.DisplayNameFor(model => model.Image)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image)
+            @*@Html.DisplayFor(model => model.Image)*@
+            <a href="~/images/@Model.Image" target="_blank">
+                <img src="~/images/@Model.Image" style=" height:160px; width:120px; object-fit:cover " />
+            </a>
         </dd>
 
     </dl>
