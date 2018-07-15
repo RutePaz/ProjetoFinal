@@ -32,12 +32,13 @@ namespace TI2PFINAL.Models
         [Display(Name = "Director ")]
         public string Director { get; set; }
 
-        [Display(Name = "Duration ")]
+        [Display(Name = "Duration (minutes) ")]
         [Required(ErrorMessage = " {0} required field!")]
-        public string Duration { get; set; }
+        public int Duration { get; set; }
 
         //Se o atributo OpeningNight fosse Datetime, ter-se-ia que colocar esta restrição:
          [Required, DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}"), /*Column(TypeName = "Date"),*/]
+         [DataType(DataType.Date)]
         //de modo a que o tipo de data apresentado fosse dd/MM/yyyy, ou seja sem horas e minutos
         [Display(Name = "Opening Night")]
         public DateTime OpeningNight { get; set; }

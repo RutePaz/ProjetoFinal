@@ -41,7 +41,9 @@ namespace ProjetoFinal2.Controllers
             {
                 //se o musical nao for encontrado, é redirecionado para o "Index" 
                 return RedirectToAction("Index");
+
             }
+            
             return View(musical);
         }
 
