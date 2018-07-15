@@ -31,7 +31,7 @@ namespace TI2PFINAL.Models
         //ErrorMessage = "O {0} it can only contain letters of blank spaces. Each word has to begin with a capital letter followed by a lower case letters...")]
         public string Character { get; set; }
 
-        //public string Image { get; set; }
+        public string Image { get; set; }
 
     }
 }

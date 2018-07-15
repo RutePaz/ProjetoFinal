@@ -72,6 +72,25 @@
         </dd>
 
     </dl>
+
+</div>
+@Html.Partial("_MusicalPartial", Model.List_Soundtrack)
+<div class="container" style="height:600px; overflow-y:scroll;">
+    
+    @foreach (var character in Model.List_Cast.ToList())
+    {
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+                <h4>@character.Character</h4>
+                @* <img src="/images/@character.Image" style="width:200px; height:200px; object-fit:cover;" data-toggle="modal" data-target="#myModal" />*@
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <h4>@character.Cast.Name</h4>
+                <img src="/images/@character.Cast.Image" style="width:200px; height:200px; object-fit:cover;" data-toggle="modal" data-target="#myModal" />
+            </div>
+        </div>
+        <hr />
+    }
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Musical }) |

@@ -44,7 +44,7 @@ namespace TI2PFINAL.Models
         public DateTime OpeningNight { get; set; }
 
         [Display(Name = "Ticket from")]
-        public string Ticket { get; set; }
+        public decimal Ticket { get; set; }
 
         [Display(Name = "Poster ")]
         public string Poster { get; set; }

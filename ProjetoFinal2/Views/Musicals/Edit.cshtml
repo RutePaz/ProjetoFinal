@@ -31,7 +31,7 @@
         @Html.LabelFor(model => model.Synopsis, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @*@Html.EditorFor(model => model.Synopsis, new { htmlAttributes = new { @class = "form-control" } })*@
-            @Html.TextAreaFor(model => model.Synopsis, new { rows = "10", cols = "50"  })
+            @Html.TextAreaFor(model => model.Synopsis, new { rows = "10", cols = "50" })
             @Html.ValidationMessageFor(model => model.Synopsis, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -49,14 +49,14 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.Duration, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Duration, "", new { @class = "text-danger" })
-            
+
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.OpeningNight, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.OpeningNight, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.OpeningNight, new { htmlAttributes = new { @class = "form-control", @Value = Model.OpeningNight.ToString("yyyy-MM-dd") } })
             @Html.ValidationMessageFor(model => model.OpeningNight, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -84,17 +84,42 @@
     </div>
     @Html.ActionLink("Add Song", "Create", "Soundtracks", new { MusicalFK = Model.ID_Musical }, null)
     @Html.Partial("_MusicalPartial", Model.List_Soundtrack)
-    <div class="form-group">
-        <diav clss="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
-        </diav>
-    </div>
-</div>
-}
+    <div class="container" style="height:600px; overflow-y:scroll;">
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        @foreach (var character in Model.List_Cast.ToList())
+        {
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+                    <h4>@character.Character</h4>
+                    <img src="~/images/" style="width:200px; height:200px; object-fit:cover;" data-toggle="modal" data-target="#myModal" />
+                    @Html.ActionLink("Edit", "Edit", "CastMusicals", new { id = character.ID }, null) |
+                    @Html.ActionLink("Delete", "Delete", "CastMusicals", new { id = character.ID }, null)
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <h4>@character.Cast.Name</h4>
+                    <img src="/images/@character.Cast.Image" style="width:200px; height:200px; object-fit:cover;" data-toggle="modal" data-target="#myModal" />
+                </div>
+            </div>
+            <hr />
+        }
+    </div>
+    @Html.ActionLink("Create Character", "Create", "CastMusicals", new { MusicalFK = Model.ID_Musical }, null)
+    <div class="form-group">
+
+        <div class="form-group">
+            <diav clss="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </diav>
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+    }
+
