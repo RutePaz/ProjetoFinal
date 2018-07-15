@@ -38,9 +38,9 @@ namespace ProjetoFinal2.Controllers
         }
 
         // GET: Soundtracks/Create
-        public ActionResult Create()
+        public ActionResult Create(int MusicalFK)
         {
-            ViewBag.MusicalFK = new SelectList(db.Musical, "ID_Musical", "Title");
+            ViewBag.Musical = db.Musical.Find(MusicalFK);
             return View();
         }
 
@@ -71,7 +71,7 @@ namespace ProjetoFinal2.Controllers
                     db.SaveChanges();
 
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Edit", "Musicals", new { id=soundtrack.MusicalFK});
                 }
                 catch (Exception)
                 {
@@ -80,7 +80,7 @@ namespace ProjetoFinal2.Controllers
                 }
             }
             ViewBag.MusicalFK = new SelectList(db.Musical, "ID_Musical", "Title", soundtrack.MusicalFK);
-            return View(soundtrack);
+            return RedirectToAction("Create",new { MusicalFK = soundtrack.MusicalFK });
         }
 
         // GET: Soundtracks/Edit/5
@@ -88,12 +88,12 @@ namespace ProjetoFinal2.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Musicals", null);
             }
             Soundtrack soundtrack = db.Song.Find(id);
             if (soundtrack == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Musicals", null);
             }
             ViewBag.MusicalFK = new SelectList(db.Musical, "ID_Musical", "Title", soundtrack.MusicalFK);
             return View(soundtrack);
@@ -112,7 +112,7 @@ namespace ProjetoFinal2.Controllers
                 {
                     db.Entry(soundtrack).State = EntityState.Modified;
                     db.SaveChanges();
-                    return RedirectToAction("Index");
+                    return  RedirectToAction("Edit", "Musicals", new { id = soundtrack.MusicalFK });
                 }
             }
             catch (Exception)
@@ -129,14 +129,14 @@ namespace ProjetoFinal2.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Musicals",null);
             }
             Soundtrack soundtrack = db.Song.Find(id);
             if (soundtrack == null)
             {
-                return RedirectToAction("Index");
+                 return RedirectToAction("Index", "Musicals", null);
             }
-            return View(soundtrack);
+            return RedirectToAction("Edit", "Musicals", new { id = soundtrack.MusicalFK }); ;
         }
 
         // POST: Soundtracks/Delete/5
@@ -150,14 +150,14 @@ namespace ProjetoFinal2.Controllers
             {
                 db.Song.Remove(soundtrack);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit", "Musicals", new { id=soundtrack.MusicalFK});
             }
             catch (Exception)
             {
                 ModelState.AddModelError("", string.Format("It's not possible to remove the Song nº {0}-{1}", id, soundtrack.SongName));
 
             }
-            return View(soundtrack);
+            return RedirectToAction("Edit", "Musicals", new { id = soundtrack.MusicalFK });
         }
 
         protected override void Dispose(bool disposing)

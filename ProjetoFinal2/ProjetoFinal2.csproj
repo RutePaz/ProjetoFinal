@@ -488,6 +488,7 @@
     <Content Include="Views\Casts\Details.cshtml" />
     <Content Include="Views\Casts\Edit.cshtml" />
     <Content Include="Views\Casts\Index.cshtml" />
+    <Content Include="Views\Musicals\_MusicalPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

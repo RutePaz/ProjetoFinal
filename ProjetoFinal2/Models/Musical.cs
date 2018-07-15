@@ -20,26 +20,32 @@ namespace TI2PFINAL.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID_Musical { get; set; }
 
+        [Display(Name = "Title")]
         [Required(ErrorMessage = " {0} required field!")]
         public string Title { get; set; }
 
+        [Display(Name = "Synopsis ")]
         [Required(ErrorMessage = " {0} required field!")]
         public string Synopsis { get; set; }
 
         [Required(ErrorMessage = " {0} required field!")]
+        [Display(Name = "Director ")]
         public string Director { get; set; }
 
+        [Display(Name = "Duration ")]
         [Required(ErrorMessage = " {0} required field!")]
         public string Duration { get; set; }
 
         //Se o atributo OpeningNight fosse Datetime, ter-se-ia que colocar esta restrição:
-        // [Required, Column(TypeName = "Date"), DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+         [Required, DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}"), /*Column(TypeName = "Date"),*/]
         //de modo a que o tipo de data apresentado fosse dd/MM/yyyy, ou seja sem horas e minutos
-        public string OpeningNight { get; set; }
+        [Display(Name = "Opening Night")]
+        public DateTime OpeningNight { get; set; }
 
+        [Display(Name = "Ticket from")]
         public string Ticket { get; set; }
 
- 
+        [Display(Name = "Poster ")]
         public string Poster { get; set; }
 
         // referência aos atores que um musical apresenta

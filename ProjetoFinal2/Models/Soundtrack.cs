@@ -13,6 +13,7 @@ namespace TI2PFINAL.Models
         public int ID_Song { get; set; }
         [Required(ErrorMessage = " {0} required field!")]
 
+        [Display (Name ="Title")]
         public string SongName { get; set; }
         public string Duration { get; set; }
 
