@@ -1,0 +1,87 @@
+﻿@model TI2PFINAL.Models.Musical
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Musical</h4>
+    <hr />
+    @*HTML Helper para apresentar as mensagens de erro*@
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Synopsis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Synopsis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpeningNight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpeningNight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ticket)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Poster)*@
+            <a href="~/images/@Model.Poster" target="_blank">
+                <img scr="~/images/@Model.Poster" width="50" height="37" />
+
+            </a>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Poster)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

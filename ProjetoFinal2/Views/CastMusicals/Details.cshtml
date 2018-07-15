@@ -1,0 +1,42 @@
+﻿@model TI2PFINAL.Models.CastMusical
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CastMusical</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cast.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cast.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Musical.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Musical.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Character)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Character)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
